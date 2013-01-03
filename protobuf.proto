@@ -106,6 +106,7 @@ message Message {
 
 		optional Device device = 5;
 		optional string session_id = 7;
+		optional string password = 8;
 
 	}
 
