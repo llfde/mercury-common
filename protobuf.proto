@@ -1,5 +1,5 @@
 
-package com.mwr.droidhg.api;
+package com.mwr.cinnibar.api;
 
 option optimize_for = SPEED;
 
