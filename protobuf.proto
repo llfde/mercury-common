@@ -1,5 +1,5 @@
 
-package com.mwr.cinnibar.api;
+package com.mwr.jdiesel.api;
 
 option optimize_for = SPEED;
 
