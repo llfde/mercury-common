@@ -4,24 +4,20 @@ package com.mwr.cinnibar.api;
 option optimize_for = SPEED;
 
 message Message {
-
 	enum MessageType {
 		SYSTEM_REQUEST = 1;
 		SYSTEM_RESPONSE = 2;
 		REFLECTION_REQUEST = 3;
 		REFLECTION_RESPONSE = 4;
 	}
-
 	required int32 id = 1;
 	required MessageType type = 2;
-
 	optional SystemRequest system_request = 5;
 	optional SystemResponse system_response = 6;
 	optional ReflectionRequest reflection_request = 7;
 	optional ReflectionResponse reflection_response = 8;
 
 	message ReflectionRequest {
-
 		enum RequestType {
 			RESOLVE = 1;
 			CONSTRUCT = 2;
@@ -31,36 +27,30 @@ message Message {
 			DELETE = 6;
 			DELETE_ALL = 7;
 		}
-
 		required string session_id = 1;
 		required RequestType type = 2;
 
 		message Resolve {
 			optional string classname = 1;
 		}
-
 		message Construct {
 			optional ObjectReference object = 1;
 			repeated Argument argument = 2;
 		}
-
 		message Invoke {
 			optional ObjectReference object = 1;
 			optional string method = 2;
 			repeated Argument argument = 3;
 		}
-
 		message SetProperty {
 			optional ObjectReference object = 1;
 			optional string property = 2;
 			optional Argument value = 3;
 		}
-
 		message GetProperty {
 			optional ObjectReference object = 1;
 			optional string property = 2;
 		}
-
 		message Delete {
 			optional ObjectReference object = 1;
 		}
@@ -71,7 +61,6 @@ message Message {
 		optional SetProperty set_property = 6;
 		optional GetProperty get_property = 7;
 		optional Delete delete = 8;
-
 	}
 
 	message ReflectionResponse {
